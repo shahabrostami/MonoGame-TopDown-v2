@@ -11,6 +11,7 @@ namespace topdown_fz.GameStates
     {
         #region Property
         Stack<GameComponent> components;
+        private GameStateManager stateManager;
 
         #endregion
 
@@ -18,6 +19,7 @@ namespace topdown_fz.GameStates
         public GameState(Game game) : base(game)
         {
             components = new Stack<GameComponent>();
+            stateManager = (GameStateManager)Game.Services.GetService(typeof(GameStateManager));
         }
         #endregion
 
@@ -40,6 +42,28 @@ namespace topdown_fz.GameStates
                         ((DrawableGameComponent)component).Draw(gameTime);
 
             base.Draw(gameTime);
+        }
+
+        internal void StateChangeEvent(object sender, EventArgs e)
+        {
+            if (stateManager.CurrentState == this)
+            {
+                StateEnabled(true);
+            } else
+                StateEnabled(false);
+        }
+
+        private void StateEnabled(Boolean b)
+        {
+            Enabled = b;
+            Visible = b;
+            /* foreach (GameComponent component in components)
+            {
+                component.Enabled = b;
+                if (component is DrawableGameComponent)
+                    ((DrawableGameComponent)component).Visible = b;
+            }
+            */
         }
 
         public override void Update(GameTime gameTime)
