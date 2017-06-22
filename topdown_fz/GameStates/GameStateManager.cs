@@ -38,7 +38,6 @@ namespace topdown_fz.GameStates
             states.Push(gameState);
             Game.Components.Add(gameState);
             StateChangeEvent += gameState.StateChangeEvent;
-            StateChanged();
         }
 
         public void PopState()
@@ -49,12 +48,11 @@ namespace topdown_fz.GameStates
             GameState popState = states.Pop();
             Game.Components.Remove(popState);
             StateChangeEvent -= popState.StateChangeEvent;
-            StateChanged();
         }
 
         public void ChangeState(GameState gameState)
         {
-            while( states.Count > 0 )
+            while (states.Count > 0)
                 PopState();
 
             PushState(gameState);
@@ -64,7 +62,7 @@ namespace topdown_fz.GameStates
 
         public void StateChanged()
         {
-                StateChangeEvent(this, null);
+            StateChangeEvent(this, null);
         }
         #endregion
     }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using topdown_fz.GameStates;
 
 namespace topdown_fz
 {
@@ -9,14 +10,44 @@ namespace topdown_fz
     /// </summary>
     public class Game1 : Game
     {
+        #region Field
+        // Graphics
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+        static Rectangle screenRectangle = new Rectangle(0, 0, 800, 600);
 
+        // State
+        GameStateManager gsm;
+        TitleScreenState tss;
+        #endregion
+
+        #region Property
+        public SpriteBatch SpriteBatch
+        {
+            get { return spriteBatch; }
+        }
+
+        public static Rectangle ScreenRectangle
+        {
+            get { return screenRectangle; }
+        }
+        #endregion
+
+        #region Constructor
         public Game1()
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            graphics.PreferredBackBufferHeight = screenRectangle.Height;
+            graphics.PreferredBackBufferWidth = screenRectangle.Width;
+            graphics.ApplyChanges();
+            
+            gsm = new GameStateManager(this);
+            tss = new TitleScreenState(this);
+            gsm.ChangeState(tss);
         }
+        #endregion
 
         /// <summary>
         /// Allows the game to perform any initialization it needs to before starting to run.
@@ -26,8 +57,6 @@ namespace topdown_fz
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
-
             base.Initialize();
         }
 
@@ -39,8 +68,6 @@ namespace topdown_fz
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
-
-            // TODO: use this.Content to load your game content here
         }
 
         /// <summary>
@@ -62,8 +89,6 @@ namespace topdown_fz
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 
@@ -74,9 +99,6 @@ namespace topdown_fz
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
-
-            // TODO: Add your drawing code here
-
             base.Draw(gameTime);
         }
     }
