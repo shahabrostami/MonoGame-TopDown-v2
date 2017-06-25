@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using topdown_fz.Components;
 using topdown_fz.GameStates;
 
 namespace topdown_fz
@@ -57,6 +58,7 @@ namespace topdown_fz
         /// </summary>
         protected override void Initialize()
         {
+            Components.Add(new Xin(this));
             base.Initialize();
         }
 

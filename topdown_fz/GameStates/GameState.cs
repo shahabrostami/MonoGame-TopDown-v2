@@ -33,7 +33,8 @@ namespace topdown_fz.GameStates
         public GameState Inst
         {
             get { return inst; }
-        }
+        }
+
         public override void Initialize()
         {
             base.Initialize();
