@@ -17,10 +17,7 @@ namespace topdown_fz.GameStates
         #region Property
         public GameState CurrentState
         {
-            get
-            {
-                return states.Peek();
-            }
+            get { return states.Peek(); }
         }
         #endregion
 
