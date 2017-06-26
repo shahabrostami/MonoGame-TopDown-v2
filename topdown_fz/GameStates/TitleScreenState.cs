@@ -15,7 +15,7 @@ namespace topdown_fz.GameStates
         private MenuComponent menuComponent;
         private Rectangle backgroundRect;
         private Texture2D background;
-        private int currentIndex;
+        private List<String> labels;
 
         public TitleScreenState(Game game) : base(game)
         {
@@ -26,32 +26,26 @@ namespace topdown_fz.GameStates
         public override void Initialize()
         {
             backgroundRect = Game1.ScreenRectangle;
-            menuComponent = new MenuComponent(null, null, null, null);
-            currentIndex = 0;
+
+            labels = new List<String>() { "NEW", "CONTINUE", "EXIT" };
             base.Initialize();
         }
 
         protected override void LoadContent()
         {
             background = content.Load<Texture2D>(@"Backgrounds\title");
-            // button = content.Load<Texture2D>(@"UI\introbutton");
-            // button_h = content.Load<Texture2D>(@"UI\introbutton_h");
-            // button_p = content.Load<Texture2D>(@"UI\introbutton_p");
+
+            Texture2D button = content.Load<Texture2D>(@"UI\Buttons\introbutton");
+            Texture2D button_h = content.Load<Texture2D>(@"UI\Buttons\introbutton_h");
+            Texture2D button_p = content.Load<Texture2D>(@"UI\Buttons\introbutton_p");
+            SpriteFont font = content.Load<SpriteFont>(@"UI\Fonts\Goeslim");
+            menuComponent = new MenuComponent(labels, font, button, button_h, button_p, backgroundRect.Width/2, backgroundRect.Height - 200);
             base.LoadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
-            if (Xin.KeyReleased(Keys.S))
-                currentIndex++;
-            else if (Xin.KeyReleased(Keys.W))
-                currentIndex--;
-
-            if (currentIndex ==  noOfButtons)
-                currentIndex = 0;
-            else if (currentIndex == -1)
-                currentIndex = noOfButtons - 1;
-
+            menuComponent.Update(gameTime);
             base.Update(gameTime);
         }
 

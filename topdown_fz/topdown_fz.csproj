@@ -61,15 +61,17 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\Backgrounds\title.jpg" />
-    <Content Include="Content\UI\introbutton.png" />
-    <Content Include="Content\UI\introbutton_h.png" />
-    <Content Include="Content\UI\introbutton_p.png" />
+    <Content Include="Content\UI\Buttons\introbutton_h.png" />
+    <Content Include="Content\UI\Buttons\introbutton.png" />
+    <Content Include="Content\UI\Buttons\introbutton_p.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
     <None Include="app.manifest" />
-    <None Include="Content\UI\introbutton.ase" />
+    <None Include="Content\UI\Fonts\Goeslim Regular.otf" />
+    <None Include="Content\UI\Fonts\Goeslim.spritefont" />
+    <None Include="Content\UI\Buttons\introbutton.ase" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />
