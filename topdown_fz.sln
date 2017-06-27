@@ -5,7 +5,12 @@ VisualStudioVersion = 15.0.26403.7
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "topdown_fz", "topdown_fz\topdown_fz.csproj", "{CED46488-CFED-4468-9A92-E581D760A0BF}"
 EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "GameObj", "GameObj\GameObj.shproj", "{9F7FB32A-F390-48A5-891F-266FF1EFA97C}"
+EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		GameObj\GameObj.projitems*{9f7fb32a-f390-48a5-891f-266ff1efa97c}*SharedItemsImports = 13
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
 		Release|x86 = Release|x86
