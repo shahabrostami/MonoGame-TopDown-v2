@@ -26,7 +26,7 @@ namespace topdown_fz.TileEngine
             Origin = new Vector2(viewport.Width / 2f, viewport.Height / 2f);
             Position = Vector2.Zero;
         }
-
+        
         public void Update(GameTime gameTime)
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Home))
