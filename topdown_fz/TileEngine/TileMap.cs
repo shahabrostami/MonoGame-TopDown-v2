@@ -11,6 +11,7 @@ namespace topdown_fz.TileEngine
     {
         #region Field
         private String mapName;
+        private List<TileSet> tileSets;
 
         private TileLayer groundLayer;
         private TileLayer edgeLayer;
@@ -36,8 +37,18 @@ namespace topdown_fz.TileEngine
             buildingLayer = new TileLayer("building", map.Layers[2]);
             decorationLayer = new TileLayer("decoration", map.Layers[3]);
 
+            foreach (TmxTileset tileSet in map.Tilesets) {
+                tileSets.Add(new TileSet(tileSet));
+            }
+
+
             mapWidth = map.Width;
             mapHeight = map.Height;
+        }
+
+        internal string getName()
+        {
+            throw new NotImplementedException();
         }
         #endregion
 

@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace topdown_fz.TileEngine
 {
-    class mapConfig
+    class Map
     {
         private TileSet tileSet;
         private TileMap tileMap;
 
-        public MapDescription(TileSet tileSet, TileMap tileMap)
+        public Map(TileSet tileSet, TileMap tileMap)
         {
             this.tileSet = tileSet;
             this.tileMap = tileMap;

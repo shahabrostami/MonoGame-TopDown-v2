@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TiledSharp;
 
 namespace topdown_fz.TileEngine
 {
@@ -20,8 +21,12 @@ namespace topdown_fz.TileEngine
         #endregion
 
         #region Constructor
-        public TileSet(String setName, int tileWidth, int tileHeight)
+        public TileSet(TmxTileset tmxTileSet)
         {
+            this.tileWidth = tmxTileSet.TileWidth;
+            this.tileHeight = tmxTileSet.TileHeight;
+            this.textureWidth = (int) tmxTileSet.Image.Width;
+            this.tetureHeight = (int) tmxTileSet.Image.Height;
 
         }
         #endregion
