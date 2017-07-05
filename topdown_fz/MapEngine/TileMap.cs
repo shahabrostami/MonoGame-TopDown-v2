@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TiledSharp;
 
-namespace topdown_fz.TileEngine
+namespace topdown_fz.MapEngine
 {
     class TileMap
     {
@@ -30,7 +30,7 @@ namespace topdown_fz.TileEngine
         {
             this.mapName = mapName;
 
-            TmxMap map = new TmxMap("Maps/TileMap/" + mapName + ".tmx");
+            TmxMap map = new TmxMap("Map/TMX/" + mapName + ".tmx");
 
             groundLayer = new TileLayer("ground", map.Layers[0]);
             edgeLayer = new TileLayer("edge", map.Layers[1]);

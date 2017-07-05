@@ -13,7 +13,7 @@ namespace topdown_fz.GameStates
         #region Property
         Stack<GameComponent> components;
         protected ContentManager content;
-        private GameStateManager stateManager;
+        public GameStateManager stateManager;
 
         public GameState inst;
     

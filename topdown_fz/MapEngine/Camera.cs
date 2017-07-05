@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace topdown_fz.TileEngine
+namespace topdown_fz.MapEngine
 {
     class Camera
     {

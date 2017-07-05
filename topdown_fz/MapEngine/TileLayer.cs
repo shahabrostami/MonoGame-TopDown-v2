@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using TiledSharp;
 
-namespace topdown_fz.TileEngine
+namespace topdown_fz.MapEngine
 {
     class TileLayer
     {

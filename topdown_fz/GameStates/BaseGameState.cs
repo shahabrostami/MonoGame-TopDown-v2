@@ -13,12 +13,14 @@ namespace topdown_fz.GameStates
         protected Game1 GameRef;
         #endregion
 
+        #region Constructor
         public BaseGameState(Game game) : base(game)
         {
             GameRef = (Game1)game;
         }
-
-        #region Constructor
+        #endregion
+        
+        #region Methods
         public override void Initialize()
         {
             base.Initialize();

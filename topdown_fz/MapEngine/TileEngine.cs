@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace topdown_fz.TileEngine
+namespace topdown_fz.MapEngine
 {
     class TileEngine
     {
@@ -29,7 +29,6 @@ namespace topdown_fz.TileEngine
 
         public void changeMap(String mapName)
         {
-            TileSet newTileSet = new TileSet();
             currentMap = new TileMap(mapName);
         }
         #endregion

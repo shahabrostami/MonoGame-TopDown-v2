@@ -103,6 +103,11 @@ namespace topdown_fz.Components
                 spriteBatch.DrawString(font, item.label, item.labelDestination, Color.White);
             }
         }
+
+        public int getCurrentIndex()
+        {
+            return currentIndex;
+        }
         #endregion
     }
 }

@@ -44,6 +44,7 @@
     <Compile Include="Components\MenuComponent.cs" />
     <Compile Include="Components\Xin.cs" />
     <Compile Include="Game1.cs" />
+    <Compile Include="GameStates\GameplayState.cs" />
     <Compile Include="GameStates\TitleScreenState.cs" />
     <Compile Include="GameStates\BaseGameState.cs" />
     <Compile Include="GameStates\GameState.cs" />
@@ -51,12 +52,12 @@
     <Compile Include="GameStates\IGameState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TileEngine\Camera.cs" />
-    <Compile Include="TileEngine\MapList.cs" />
-    <Compile Include="TileEngine\TileEngine.cs" />
-    <Compile Include="TileEngine\TileLayer.cs" />
-    <Compile Include="TileEngine\TileMap.cs" />
-    <Compile Include="TileEngine\TileSet.cs" />
+    <Compile Include="MapEngine\Camera.cs" />
+    <Compile Include="MapEngine\MapList.cs" />
+    <Compile Include="MapEngine\TileEngine.cs" />
+    <Compile Include="MapEngine\TileLayer.cs" />
+    <Compile Include="MapEngine\TileMap.cs" />
+    <Compile Include="MapEngine\TileSet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="MonoGame.Framework">

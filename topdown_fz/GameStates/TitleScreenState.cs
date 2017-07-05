@@ -46,6 +46,16 @@ namespace topdown_fz.GameStates
         public override void Update(GameTime gameTime)
         {
             menuComponent.Update(gameTime);
+
+            if (Xin.KeyPressed(Keys.Enter) || Xin.KeyPressed(Keys.Space))
+            {
+                int currentIndex = menuComponent.getCurrentIndex();
+                if (currentIndex == 0) {
+                    stateManager.ChangeState();
+                }
+            }
+
+
             base.Update(gameTime);
         }
 
