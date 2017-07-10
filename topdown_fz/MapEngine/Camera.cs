@@ -13,14 +13,19 @@ namespace topdown_fz.MapEngine
     {
         private readonly Viewport viewport;
 
-        private Vector2 Position;
+        private Vector2 position;
         private float Rotation;
         private float Zoom;
         private Vector2 Origin;
 
-        public Camera(Viewport viewport)
+        public Vector2 Position
         {
-            this.viewport = viewport;
+            get { return position; }
+            set { position = value; }
+        }
+
+        public Camera()
+        {
             Rotation = 0;
             Zoom = 1;
             Origin = new Vector2(viewport.Width / 2f, viewport.Height / 2f);
@@ -31,23 +36,23 @@ namespace topdown_fz.MapEngine
         {
             if (Keyboard.GetState().IsKeyDown(Keys.Home))
             {
-                Position.Y -= 1.0F;
+                position.Y -= 1.0F;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.End))
             {
-                Position.Y += 1.0F;
+                position.Y += 1.0F;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Delete))
             {
-                Position.X -= 1.0F;
+                position.X -= 1.0F;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.PageDown))
             {
-                Position.X += 1.0F;
+                position.X += 1.0F;
             }
 
-            Position.X -= Origin.X;
-            Position.Y -= Origin.Y;
+            position.X -= Origin.X;
+            position.Y -= Origin.Y;
         }
 
         public Matrix getViewMatrix()

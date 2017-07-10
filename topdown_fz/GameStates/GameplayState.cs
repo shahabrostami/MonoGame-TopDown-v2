@@ -19,7 +19,7 @@ namespace topdown_fz.GameStates
         public GameplayState(Game game) : base(game)
         {
             game.Services.AddService(typeof(GameplayState), this);
-            tileEngine = new TileEngine(GraphicsDevice.Viewport);
+            tileEngine = new TileEngine(GraphicsDevice.Viewport.Bounds);
             tileEngine.changeMap("farm");
         }
 

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -41,7 +43,6 @@ namespace topdown_fz.MapEngine
                 tileSets.Add(new TileSet(tileSet));
             }
 
-
             mapWidth = map.Width;
             mapHeight = map.Height;
         }
@@ -53,6 +54,15 @@ namespace topdown_fz.MapEngine
         #endregion
 
         #region Method
+        public void Update(GameTime gameTime)
+        {
+
+        }
+        
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        {
+
+        }
         #endregion
 
     }
