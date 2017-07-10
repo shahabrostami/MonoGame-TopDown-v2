@@ -20,7 +20,7 @@ namespace topdown_fz.MapEngine
         #endregion
 
         #region Property
-        public Rectangle ViewRectangle
+        public static Rectangle ViewRectangle
         {
             get { return viewRectangle; }
         }
