@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TiledSharp;
+using Microsoft.Xna.Framework.Content;
 
 namespace topdown_fz.MapEngine
 {
@@ -32,16 +33,18 @@ namespace topdown_fz.MapEngine
         {
             this.mapName = mapName;
 
-            TmxMap map = new TmxMap("Map/TMX/" + mapName + ".tmx");
+            TmxMap map = new TmxMap("Content/Map/TMX/" + mapName + ".tmx");
+
+            tileSets = new List<TileSet>(map.Tilesets.Count);
+
+            foreach (TmxTileset tileSet in map.Tilesets) {
+                tileSets.Add(new TileSet(tileSet));
+            }
 
             groundLayer = new TileLayer("ground", map.Layers[0]);
             edgeLayer = new TileLayer("edge", map.Layers[1]);
             buildingLayer = new TileLayer("building", map.Layers[2]);
             decorationLayer = new TileLayer("decoration", map.Layers[3]);
-
-            foreach (TmxTileset tileSet in map.Tilesets) {
-                tileSets.Add(new TileSet(tileSet));
-            }
 
             mapWidth = map.Width;
             mapHeight = map.Height;
@@ -54,14 +57,21 @@ namespace topdown_fz.MapEngine
         #endregion
 
         #region Method
+        public void LoadContent(ContentManager Content)
+        {
+            foreach (TileSet tileSet in tileSets)
+            {
+                tileSet.LoadContent(Content);
+            }
+        }
         public void Update(GameTime gameTime)
         {
 
         }
         
-        public void Draw(SpriteBatch spriteBatch, GameTime gameTime)
+        public void Draw(SpriteBatch spriteBatch, GameTime gameTime, Camera camera)
         {
-
+            groundLayer.Draw(spriteBatch, tileSets[0], gameTime, camera);
         }
         #endregion
 

@@ -12,7 +12,6 @@ namespace topdown_fz.MapEngine
     {
         #region Field
         private static Rectangle viewRectangle;
-        private TileMap currentMap;
         private Camera camera;
 
         private static int tileWidth = 32;
@@ -36,11 +35,6 @@ namespace topdown_fz.MapEngine
         #endregion
 
         #region Method
-
-        public void changeMap(String mapName)
-        {
-            currentMap = new TileMap(mapName);
-        }
 
         public static Point Vector2Cell(Vector2 vector)
         {

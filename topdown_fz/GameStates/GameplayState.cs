@@ -15,12 +15,19 @@ namespace topdown_fz.GameStates
     {
         private Rectangle backgroundRect;
         private TileEngine tileEngine;
+        private TileMap map;
+        private Camera camera;
 
         public GameplayState(Game game) : base(game)
         {
             game.Services.AddService(typeof(GameplayState), this);
             tileEngine = new TileEngine(GraphicsDevice.Viewport.Bounds);
-            tileEngine.changeMap("farm");
+            camera = new Camera();
+        }
+
+        public void newGame()
+        {
+            map = new TileMap("farm");
         }
 
         #region Constructor
@@ -32,18 +39,20 @@ namespace topdown_fz.GameStates
 
         protected override void LoadContent()
         {
+            map.LoadContent(GameRef.Content);
             base.LoadContent();
         }
 
         public override void Update(GameTime gameTime)
         {
+            map.Update(gameTime);
             base.Update(gameTime);
         }
 
         public override void Draw(GameTime gameTime)
         {
             GameRef.SpriteBatch.Begin();
-
+            map.Draw(GameRef.SpriteBatch, gameTime, camera);
             // GameRef.SpriteBatch.Draw(background, backgroundRect, Color.White);
 
             GameRef.SpriteBatch.End();
