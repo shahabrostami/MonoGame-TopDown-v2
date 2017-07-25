@@ -52,9 +52,9 @@ namespace topdown_fz.MapEngine
                 // Is it drawable? (!= 0)
                 // Is it in view? (camera range)
                 if (tile.Gid == 0 || tile.X < cameraTLPosition.X || tile.X > cameraBRPosition.X || tile.Y < cameraTLPosition.Y || tile.Y > cameraBRPosition.Y)
-                    continue;
+                    break;
 
-                // spriteBatch.Draw(tileSet.Texture)
+                spriteBatch.Draw(tileSet.Texture, tileSet.DrawRectangles[tile.Gid], new Rectangle(tile.X * 32, tile.Y * 32, 32, 32), Color.CornflowerBlue);
             }
         }
         #endregion

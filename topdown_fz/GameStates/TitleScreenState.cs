@@ -51,7 +51,9 @@ namespace topdown_fz.GameStates
             {
                 int currentIndex = menuComponent.getCurrentIndex();
                 if (currentIndex == 0) {
-                    stateManager.ChangeState(new GameplayState(GameRef));
+                    GameplayState gamePlayState = new GameplayState(GameRef);
+                    gamePlayState.newGame();
+                    stateManager.ChangeState(gamePlayState);
                 }
             }
 
