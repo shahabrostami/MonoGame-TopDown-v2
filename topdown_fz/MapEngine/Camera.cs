@@ -24,6 +24,11 @@ namespace topdown_fz.MapEngine
             set { position = value; }
         }
 
+        public Matrix? Transformation
+        {
+            get { return getViewMatrix(); }
+        }
+
         public Camera()
         {
             Rotation = 0;

@@ -51,7 +51,15 @@ namespace topdown_fz.GameStates
 
         public override void Draw(GameTime gameTime)
         {
-            GameRef.SpriteBatch.Begin();
+            GameRef.SpriteBatch.Begin(
+                                 SpriteSortMode.Deferred,
+                                 BlendState.AlphaBlend,
+                                 SamplerState.PointClamp,
+                                 null,
+                                 null,
+                                 null,
+                                 camera.Transformation);
+
             map.Draw(GameRef.SpriteBatch, gameTime, camera);
             // GameRef.SpriteBatch.Draw(background, backgroundRect, Color.White);
 

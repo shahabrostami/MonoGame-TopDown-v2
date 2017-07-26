@@ -48,11 +48,15 @@ namespace topdown_fz.MapEngine
             this.tilesWide = textureWidth / tileWidth;
             this.tilesHigh = textureHeight / tileHeight;
 
-            drawRectangles = new Rectangle[tilesWide * tilesHigh];
-            for(int i = 0; i < drawRectangles.Length; i++)
-            {
-                drawRectangles[i] = new Rectangle(tileWidth * i, tileHeight * i, tileWidth, tileHeight);
-            }
+            drawRectangles = new Rectangle[tilesWide * tilesHigh + 1];
+
+            int tile = 1;
+            for (int y= 0; y < tilesWide; y++)
+                for (int x = 0; x < tilesHigh; x++)
+                {
+                    drawRectangles[tile] = new Rectangle(tileWidth * x, tileHeight * y, tileWidth, tileHeight);
+                    tile++;
+                }
         }
         #endregion
 

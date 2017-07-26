@@ -46,15 +46,19 @@ namespace topdown_fz.MapEngine
         {
             cameraTLPosition = TileEngine.Vector2Cell(camera.Position);
             cameraBRPosition = TileEngine.Vector2Cell(new Vector2(camera.Position.X + TileEngine.ViewRectangle.Width, camera.Position.Y + TileEngine.ViewRectangle.Height));
+            Rectangle dest = new Rectangle(0, 0, TileEngine.TileWidth, TileEngine.TileHeight);
 
-            foreach(TmxLayerTile tile in tmxLayer.Tiles)
+            foreach (TmxLayerTile tile in tmxLayer.Tiles)
             {
                 // Is it drawable? (!= 0)
                 // Is it in view? (camera range)
-                if (tile.Gid == 0 || tile.X < cameraTLPosition.X || tile.X > cameraBRPosition.X || tile.Y < cameraTLPosition.Y || tile.Y > cameraBRPosition.Y)
+                if (tile.Gid == 0 || ((tile.X < cameraTLPosition.X || tile.X > cameraBRPosition.X) && (tile.Y < cameraTLPosition.Y || tile.Y > cameraBRPosition.Y)))
                     break;
 
-                spriteBatch.Draw(tileSet.Texture, tileSet.DrawRectangles[tile.Gid], new Rectangle(tile.X * 32, tile.Y * 32, 32, 32), Color.CornflowerBlue);
+                dest.X = tile.X * TileEngine.TileWidth;
+                dest.Y = tile.Y * TileEngine.TileHeight;
+
+                spriteBatch.Draw(tileSet.Texture, dest, tileSet.DrawRectangles[tile.Gid], Color.White);
             }
         }
         #endregion

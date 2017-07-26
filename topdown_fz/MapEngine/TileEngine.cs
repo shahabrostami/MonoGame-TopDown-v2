@@ -23,6 +23,14 @@ namespace topdown_fz.MapEngine
         {
             get { return viewRectangle; }
         }
+
+        public static int TileWidth {
+            get { return tileWidth; } 
+        }
+
+        public static int TileHeight {
+            get { return tileHeight; }
+        }
         #endregion
 
         #region Constructor
