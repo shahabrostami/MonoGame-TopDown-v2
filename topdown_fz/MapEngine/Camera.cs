@@ -39,21 +39,21 @@ namespace topdown_fz.MapEngine
         
         public void Update(GameTime gameTime)
         {
-            if (Keyboard.GetState().IsKeyDown(Keys.Home))
+            if (Keyboard.GetState().IsKeyDown(Keys.PageUp))
             {
                 position.Y -= 1.0F;
             }
-            else if (Keyboard.GetState().IsKeyDown(Keys.End))
+            else if (Keyboard.GetState().IsKeyDown(Keys.PageDown))
             {
                 position.Y += 1.0F;
             }
-            else if (Keyboard.GetState().IsKeyDown(Keys.Delete))
-            {
-                position.X -= 1.0F;
-            }
-            else if (Keyboard.GetState().IsKeyDown(Keys.PageDown))
+            else if (Keyboard.GetState().IsKeyDown(Keys.End))
             {
                 position.X += 1.0F;
+            }
+            else if (Keyboard.GetState().IsKeyDown(Keys.Home))
+            {
+                position.X -= 1.0F;
             }
 
             position.X -= Origin.X;

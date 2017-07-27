@@ -13,11 +13,9 @@ namespace topdown_fz.MapEngine
     {
         #region Field
         private String layerName;
-
-        private TileSet tileSet;
+        
         private TmxLayer tmxLayer;
-
-        private Camera camera;
+        
         private Point cameraTLPosition;
         private Point cameraBRPosition;
 
@@ -52,8 +50,9 @@ namespace topdown_fz.MapEngine
             {
                 // Is it drawable? (!= 0)
                 // Is it in view? (camera range)
-                if (tile.Gid == 0 || ((tile.X < cameraTLPosition.X || tile.X > cameraBRPosition.X) && (tile.Y < cameraTLPosition.Y || tile.Y > cameraBRPosition.Y)))
-                    break;
+
+                if (tile.Gid == 0 || ((tile.X < cameraTLPosition.X || tile.X > cameraBRPosition.X) || (tile.Y < cameraTLPosition.Y || tile.Y > cameraBRPosition.Y)))
+                    continue;
 
                 dest.X = tile.X * TileEngine.TileWidth;
                 dest.Y = tile.Y * TileEngine.TileHeight;

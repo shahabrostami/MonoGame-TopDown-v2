@@ -60,9 +60,7 @@ namespace topdown_fz.MapEngine
         public void LoadContent(ContentManager Content)
         {
             foreach (TileSet tileSet in tileSets)
-            {
                 tileSet.LoadContent(Content);
-            }
         }
         public void Update(GameTime gameTime)
         {
@@ -72,6 +70,9 @@ namespace topdown_fz.MapEngine
         public void Draw(SpriteBatch spriteBatch, GameTime gameTime, Camera camera)
         {
             groundLayer.Draw(spriteBatch, tileSets[0], gameTime, camera);
+            edgeLayer.Draw(spriteBatch, tileSets[0], gameTime, camera);
+            buildingLayer.Draw(spriteBatch, tileSets[0], gameTime, camera);
+            decorationLayer.Draw(spriteBatch, tileSets[0], gameTime, camera);
         }
         #endregion
 

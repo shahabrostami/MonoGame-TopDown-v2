@@ -46,6 +46,7 @@ namespace topdown_fz.GameStates
         public override void Update(GameTime gameTime)
         {
             map.Update(gameTime);
+            camera.Update(gameTime);
             base.Update(gameTime);
         }
 
@@ -61,7 +62,6 @@ namespace topdown_fz.GameStates
                                  camera.Transformation);
 
             map.Draw(GameRef.SpriteBatch, gameTime, camera);
-            // GameRef.SpriteBatch.Draw(background, backgroundRect, Color.White);
 
             GameRef.SpriteBatch.End();
             base.Draw(gameTime);
