@@ -41,19 +41,19 @@ namespace topdown_fz.MapEngine
         {
             if (Keyboard.GetState().IsKeyDown(Keys.PageUp))
             {
-                position.Y -= 1.0F;
+                position.Y -= 5.0F;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.PageDown))
             {
-                position.Y += 1.0F;
+                position.Y += 5.0F;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.End))
             {
-                position.X += 1.0F;
+                position.X += 5.0F;
             }
             else if (Keyboard.GetState().IsKeyDown(Keys.Home))
             {
-                position.X -= 1.0F;
+                position.X -= 5.0F;
             }
 
             position.X -= Origin.X;

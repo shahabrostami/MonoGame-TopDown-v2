@@ -52,7 +52,8 @@ namespace topdown_fz.Components.Player
         {
             base.Draw(gameTime);
             // sprite.Draw(gameTime, gameRef.SpriteBatch);
-        }
+        }
+
         #endregion
     }
 }
