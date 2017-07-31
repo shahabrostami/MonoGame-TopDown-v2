@@ -41,7 +41,9 @@
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Components\Player\Animation.cs" />
     <Compile Include="Components\Player\AnimatedSprite.cs" />
+    <Compile Include="Components\Player\AnimationEnum.cs" />
     <Compile Include="Components\Player\Player.cs" />
     <Compile Include="Components\UI\MenuComponent.cs" />
     <Compile Include="Components\Xin.cs" />

@@ -12,6 +12,8 @@ namespace topdown_fz.Components.Player
         #region Field
         private Vector2 position;
         private Game1 gameRef;
+        private AnimatedSprite sprite;
+        Dictionary<AnimationEnum, Animation> playerAnimations = new Dictionary<AnimationEnum, Animation>();
         // private AnimatedSprite sprite;
         #endregion
 
@@ -35,6 +37,7 @@ namespace topdown_fz.Components.Player
 
         public override void Initialize()
         {
+            sprite = new AnimatedSprite(playerAnimations);
             base.Initialize();
         }
 

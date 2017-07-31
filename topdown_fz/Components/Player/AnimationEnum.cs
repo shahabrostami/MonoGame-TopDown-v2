@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace topdown_fz.Components.Player
 {
-    class AnimatedSprite
+    public enum AnimationEnum
     {
-        public AnimatedSprite(Dictionary<AnimationEnum, Animation> animations)
-        {
-
-        }
+        WALK_RIGHT,
+        WALK_LEFT,
+        WALK_UP,
+        WALK_DOWN;
     }
 }
